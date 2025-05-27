@@ -2,6 +2,7 @@ import 'package:drink_water_reminder/core/water_amount_button.dart';
 import 'package:drink_water_reminder/core/water_intake_service.dart';
 import 'package:flutter/material.dart';
 
+// DeepSeek approach that uses Flutter's built-in ValueNotifier and ValueListenableBuilder, avoiding the Provider package altogether. Thus, there's no need for ChangeNotifierProvider or context.read, which were causing errors
 void main() {
   runApp(const WaterTrackerApp());
 }
