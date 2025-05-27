@@ -1,4 +1,6 @@
-class WaterIntakeService {
+import 'package:flutter/foundation.dart';
+
+class WaterIntakeProvider extends ChangeNotifier {
   double _waterConsumed = 0.0;
   final double _dailyGoal = 2000.0;
 
@@ -9,9 +11,11 @@ class WaterIntakeService {
   void drinkWater(double amount) {
     _waterConsumed += amount;
     if (_waterConsumed > _dailyGoal) _waterConsumed = _dailyGoal;
+    notifyListeners();
   }
 
   void resetIntake() {
     _waterConsumed = 0.0;
+    notifyListeners();
   }
 }
